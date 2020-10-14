@@ -1,0 +1,35 @@
+.title {
+  margin-top: 15rpx;
+  font-size: 50rpx;
+  text-align: center;
+  color: blueviolet;
+}
+
+.subtitle {
+  margin-top: 30rpx;
+  font-size: 20rpx;
+  text-align: center;
+  color: rgb(168, 136, 199);
+}
+
+.add_item {
+  text-align: right;
+}
+
+.add_item_text {
+  text-align: center;
+  font-size: 35rpx;
+  color: rgb(87, 63, 117);
+}
+
+.add_wrapper{
+  /* display: flex; */
+  margin-top: 450rpx;
+  margin-left: 315rpx;
+  width: 100rpx;
+  height: 60rpx;
+}
+#add_item_button {
+  padding-left:10rpx;
+  box-sizing: border-box;
+}

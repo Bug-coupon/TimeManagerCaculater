@@ -1,0 +1,49 @@
+<!--index.wxml-->
+<!--标题和副标题-->
+<view class="container">
+  <view class='title'>时间管理</view>
+  <view class='subtitle'>柳比歇夫时间记录大法实践</view>
+</view>
+
+<!--弹出框，用于添加事项-->
+<view class='add_wrapper'>
+  <van-button round id='add_item_button' icon='plus' type="primary" size='large' 
+  color="linear-gradient(to right, #4bb0ff, #6149f6)" bindclick="showPopup"/>
+  <van-popup show="{{ show }}" bind:close="onClose" position="bottom" custom-style="height:70%">
+    <view class="add_item_text">添加事项</view>
+
+    <van-dropdown-menu>
+      <van-dropdown-item value="{{ value1 }}" options="{{ option1 }}" bindchange="onChange"/>
+    </van-dropdown-menu>
+
+    <van-datetime-picker
+      title="开始时间"
+      type="datetime"
+      value="{{ currentDate }}"
+      min-date="{{ minDate }}"
+      max-date="{{ maxDate }}"
+      bind:input="onInputStart"
+      visible-item-count="2"
+    />
+
+    <van-datetime-picker
+      title="结束时间"
+      type="datetime"
+      value="{{ currentDate }}"
+      min-date="{{ minDate }}"
+      max-date="{{ maxDate }}"
+      bind:input="onInputEnd"
+      visible-item-count="2"
+    />
+    
+    <van-cell-group>
+      <van-field
+        value="{{ value }}"
+        placeholder="请输入事项的具体内容"
+        border="{{ false }}"
+        bind:confirm="onConfirm"
+      />
+      <van-button slot="button" size="small" type="primary" bindtap="onSubmit">提交</van-button>
+    </van-cell-group>
+  </van-popup>
+</view>
