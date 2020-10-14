@@ -36,8 +36,8 @@
   },
   "compileType": "miniprogram",
   "libVersion": "2.13.1",
-  "appid": "wxfc0a0b72085db94b",
-  "projectname": "calc_trial",
+  "appid": "wx08fa15d41dbc221e",
+  "projectname": "miniprogram-3",
   "debugOptions": {
     "hidedInDevtools": []
   },
