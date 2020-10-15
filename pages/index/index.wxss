@@ -1,15 +1,29 @@
+.container {
+  height: 100rpx;
+  padding: 100rpx;
+  margin-bottom: 20rpx;
+}
+
 .title {
-  margin-top: 15rpx;
-  font-size: 50rpx;
+  font-weight: 900;
+  font-size: 80rpx;
+  line-height: 112rpx;
   text-align: center;
-  color: blueviolet;
+  color: rgb(38, 111, 206);
 }
 
 .subtitle {
-  margin-top: 30rpx;
   font-size: 20rpx;
   text-align: center;
-  color: rgb(168, 136, 199);
+  color: rgb(65, 162, 207);
+  margin-bottom: 40rpx;
+}
+
+.items-wrapper {
+  margin-top: 50rpx;
+  border-top: 500rpx;
+  font-size: 30rpx;
+  text-align: center;
 }
 
 .add_item {
@@ -22,14 +36,39 @@
   color: rgb(87, 63, 117);
 }
 
+.submitButton {
+  margin-left: 315rpx;
+}
+
 .add_wrapper{
   /* display: flex; */
-  margin-top: 450rpx;
-  margin-left: 315rpx;
+  margin-top: 100rpx;
+  margin-left: 317rpx;
   width: 100rpx;
   height: 60rpx;
+  display: flex;
+  flex-direction: row;
 }
-#add_item_button {
-  padding-left:10rpx;
-  box-sizing: border-box;
+
+.inrow-buttons{
+  margin-top: 10rpx;
+  display: flex;
+  flex-direction: row;
+}
+
+.func-button {
+  display: inline;
+}
+
+center{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.add-button {
+  display: inline;
+}
+
+.delete-button {
+  display: inline;
 }

@@ -36,8 +36,8 @@
   },
   "compileType": "miniprogram",
   "libVersion": "2.13.1",
-  "appid": "wx08fa15d41dbc221e",
-  "projectname": "miniprogram-3",
+  "appid": "wxfc0a0b72085db94b",
+  "projectname": "TimeManagerCaculater",
   "debugOptions": {
     "hidedInDevtools": []
   },

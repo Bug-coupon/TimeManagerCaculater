@@ -1,49 +1,100 @@
 <!--index.wxml-->
-<!--标题和副标题-->
-<view class="container">
-  <view class='title'>时间管理</view>
-  <view class='subtitle'>柳比歇夫时间记录大法实践</view>
-</view>
 
-<!--弹出框，用于添加事项-->
-<view class='add_wrapper'>
-  <van-button round id='add_item_button' icon='plus' type="primary" size='large' 
-  color="linear-gradient(to right, #4bb0ff, #6149f6)" bindclick="showPopup"/>
-  <van-popup show="{{ show }}" bind:close="onClose" position="bottom" custom-style="height:70%">
-    <view class="add_item_text">添加事项</view>
+<!--标签页-->
+<van-tabs active="{{ active }}" bind:change="onChangeTabs">
 
-    <van-dropdown-menu>
-      <van-dropdown-item value="{{ value1 }}" options="{{ option1 }}" bindchange="onChange"/>
-    </van-dropdown-menu>
+  <van-tab title="事项明细">
 
-    <van-datetime-picker
-      title="开始时间"
-      type="datetime"
-      value="{{ currentDate }}"
-      min-date="{{ minDate }}"
-      max-date="{{ maxDate }}"
-      bind:input="onInputStart"
-      visible-item-count="2"
-    />
+    <!--标题和副标题-->
+    <view class="container">
+      <view class='title'>时间管理</view>
+      <view class='subtitle'>柳比歇夫时间记录大法实践</view>
+    </view>
 
-    <van-datetime-picker
-      title="结束时间"
-      type="datetime"
-      value="{{ currentDate }}"
-      min-date="{{ minDate }}"
-      max-date="{{ maxDate }}"
-      bind:input="onInputEnd"
-      visible-item-count="2"
-    />
-    
-    <van-cell-group>
-      <van-field
-        value="{{ value }}"
-        placeholder="请输入事项的具体内容"
-        border="{{ false }}"
-        bind:confirm="onConfirm"
-      />
-      <van-button slot="button" size="small" type="primary" bindtap="onSubmit">提交</van-button>
-    </van-cell-group>
-  </van-popup>
-</view>
+    <!--事项记录展示列表-->
+    <view class="items-wrapper">
+      <van-collapse accordion value="{{ activeName }}" bind:change="onCollapseChange">
+        <view class="items-list" wx:for="{{items}}">
+          <van-collapse-item 
+            title="{{ item.type + ': ' + item.startString + '到' + item.endString }}" 
+            name="{{index}}"
+            icon="success"
+            accordion
+          >
+            {{ item.text }}
+          </van-collapse-item>
+        </view>
+      </van-collapse>
+    </view>
+
+    <!--添加事项按钮 和 删除事项按钮-->
+    <view class='inrow-buttons'>
+      <view style="flex:1" ><center><van-button round class='add-button' icon='plus' type="primary" size='normal' 
+        bindclick="showPopup" color="limegreen"/></center></view>
+      <view style="flex:1"><center><van-button round class='delete-button' icon='delete' type="primary" size='normal'
+        bindclick='deleteItem' color="magenta"/></center></view>
+    </view>
+
+    <!--分隔线-->
+    <van-divider dashed textColor="grey" font-size='12' contentPosition="center">排序功能</van-divider>
+
+    <!--事项排序按钮-->
+    <view class='inrow-buttons'>
+      <view style="flex:1" ><center><van-button class='func-button' type="primary" size='small' plain
+        bindclick="sortByType" color="teal">按类别</van-button></center></view>
+      <view style="flex:1"><center><van-button class='func-button' type="primary" size='small' plain
+        bindclick='sortByEarly' color="teal">按先后</van-button></center></view>
+      <view style="flex:1"><center><van-button class='func-button' type="primary" size='small' plain
+        bindclick='sortByDuration' color="teal">按时长</van-button></center></view>
+    </view>
+
+    <!--底部弹出框，用于添加事项-->
+    <view class='add_wrapper'>
+      <van-popup show="{{ show }}" bind:close="onClose" position="bottom" custom-style="height:70%">
+        <view class="add_item_text">添加事项</view>
+
+        <van-dropdown-menu>
+          <van-dropdown-item value="{{ value1 }}" options="{{ option1 }}" bindchange="onChange"/>
+        </van-dropdown-menu>
+
+        <van-datetime-picker
+          title="开始时间"
+          type="datetime"
+          value="{{ currentDate }}"
+          min-date="{{ minDate }}"
+          max-date="{{ maxDate }}"
+          bind:confirm="onConfirmStart"
+          visible-item-count="2"
+        />
+
+        <van-datetime-picker
+          title="结束时间"
+          type="datetime"
+          value="{{ currentDate }}"
+          min-date="{{ minDate }}"
+          max-date="{{ maxDate }}"
+          bind:confirm="onConfirmEnd"
+          visible-item-count="2"
+        />
+
+        <van-cell-group>
+          <van-field
+            value="{{ value }}"
+            placeholder="请输入事项内容, 按回车键结束"
+            bind:confirm="onConfirm"
+          />
+          <van-button class="submitButton" slot="button" size="small" 
+                      type="primary" bindtap="onSubmit">
+            提交
+          </van-button>
+        </van-cell-group>
+        
+      </van-popup>
+    </view>
+
+  </van-tab>
+
+  <van-tab title="汇总统计">
+
+  </van-tab>
+</van-tabs>
