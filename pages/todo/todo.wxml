@@ -1,35 +1,9 @@
-<view class="time">
-  <view class="blackborad">
-
-  </view>
-  <view class="note">
-    <text>拖动你的你的进度条！！</text>
-  </view>
-  <van-slider disabled="true" value="{{ currentValue }}" step="1" use-button-slot bind:drag="nonDrag" bind:change="onDrag" bar-height="4px" active-color="#ee0a24">
+<!--index.wxml-->
+<van-tabs active="{{ active }}" bind:change="onChange">
+  <van-tab title="标签 1">内容 1
   
-  <view class="custom-button" slot="button">
-    {{ currentValue }}%
-  </view>
-</van-slider>
-  <view class="note"></view>
-  <view class="note">
-    <text>你还剩下的时间！！</text> 
-    <view class='countDown'>倒计时：
-      
-      <text class="item">{{ hours }}时</text>
-      <text class="item">{{ minutes }}分</text>
-      <text class="item">{{ seconds }}秒</text>
-    </view>
-  </view>
-</view>
-<button bindtap="jumpbut">jump</button>
-<van-datetime-picker
-  type="time"
-  title="小时-- 设置倒计时-- 分钟"
-  value="{{ currentDate }}"
-  min-hour="{{ minHour }}"
-  max-hour="{{ maxHour }}"
-  bind:input="onInput"
-  bind:confirm="onConfirm"
-  bind:change="onChange"
-/>
+  </van-tab>
+  <van-tab title="标签 2">
+  内容 2
+  </van-tab>
+</van-tabs>

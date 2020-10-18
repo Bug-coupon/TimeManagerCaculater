@@ -1,15 +1,16 @@
 {
-  "pages":[
+  "pages": [
     "pages/index/index",
+    "pages/todo/todo",
     "pages/logs/logs",
     "pages/calculator/calculator",
-    "pages/todo/todo"
+    "pages/index/chart2/chart2"
   ],
-  "window":{
-    "backgroundTextStyle":"light",
-    "navigationBarBackgroundColor": "#fff",
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#FFE4B5",
     "navigationBarTitleText": "TimeManagerCalculator",
-    "navigationBarTextStyle":"black"
+    "navigationBarTextStyle": "black"
   },
   "sitemapLocation": "sitemap.json",
   "usingComponents": {
@@ -23,7 +24,9 @@
     "van-collapse-item": "@vant/weapp/collapse-item/index",
     "van-divider": "@vant/weapp/divider/index",
     "van-tab": "@vant/weapp/tab/index",
-    "van-tabs": "@vant/weapp/tabs/index"
+    "van-tabs": "@vant/weapp/tabs/index",
+    "van-row": "@vant/weapp/row/index",
+    "van-col": "@vant/weapp/col/index"
   },
   "tabBar": {
     "list": [
@@ -45,6 +48,8 @@
         "iconPath": "icons/calculator.png",
         "selectedIconPath": "icons/calculator.png"
       }
-    ]
+    ],
+    "color": "#D2B48C",
+    "selectedColor": "#FFA500"
   }
 }

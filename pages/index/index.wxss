@@ -1,22 +1,30 @@
 .container {
   height: 100rpx;
-  padding: 100rpx;
-  margin-bottom: 20rpx;
+  padding: 40rpx;
+  text-align: center;
+  /* background-color: moccasin; */
+  position: relative;
 }
 
 .title {
-  font-weight: 900;
-  font-size: 80rpx;
+  font-weight: 700;
+  font-size: 60rpx;
   line-height: 112rpx;
   text-align: center;
-  color: rgb(38, 111, 206);
+  color:white;
 }
 
-.subtitle {
-  font-size: 20rpx;
-  text-align: center;
-  color: rgb(65, 162, 207);
-  margin-bottom: 40rpx;
+.time-background {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  height: 100%;
+}
+
+.scroll {
+  height: 800rpx;
 }
 
 .items-wrapper {
@@ -42,22 +50,21 @@
 
 .add_wrapper{
   /* display: flex; */
-  margin-top: 100rpx;
   margin-left: 317rpx;
   width: 100rpx;
-  height: 60rpx;
+  height: 0rpx;
   display: flex;
   flex-direction: row;
 }
 
 .inrow-buttons{
-  margin-top: 10rpx;
   display: flex;
   flex-direction: row;
+  justify-content: center;
 }
 
-.func-button {
-  display: inline;
+.left {
+  justify-content: flex-end;
 }
 
 center{
@@ -65,10 +72,36 @@ center{
   flex-direction: column;
   align-items: center;
 }
+
+.button-wrapper {
+  background-color: moccasin;
+}
+
 .add-button {
   display: inline;
 }
 
 .delete-button {
   display: inline;
+}
+
+.line {
+  display: block;
+  height: 38rpx;
+}
+
+.func-button{
+  border-color: white;
+  border-width: 1rpx;
+}
+
+.chart-button {
+  background-color: orange;
+  border-radius:20rpx;
+  width:48%;
+  height:55rpx;
+  line-height:55rpx;
+  font-size:26rpx;
+  color:#fff;
+  border:none;
 }
