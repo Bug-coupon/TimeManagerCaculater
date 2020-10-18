@@ -103,10 +103,17 @@ Page({
 
   // 标签页切换
   onChart() {
-      app.globalData.itemList = this.data.items;
-      wx.navigateTo({
-        url: '/pages/index/chart2/chart2',
+    app.globalData.itemList = this.data.items;
+    if (this.data.items.length == 0) {
+      wx.showToast({
+        title: '事项列表为空',
+        icon: "none"
       });
+    } else {
+        wx.navigateTo({
+          url: '/pages/index/chart2/chart2',
+        });
+    }
   },
 
   // 构建手风琴式折叠面板
