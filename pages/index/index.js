@@ -64,9 +64,9 @@ Page({
   },// 绘图
 
   onLoad() {
-    console.log("Index loading...");
     
     // 饼图 测试代码 开始
+    /*
     this.data.items.push({
       type: '上课',
       startTime: new Date(2020, 9, 14, 10, 0, 0, 0),
@@ -98,6 +98,7 @@ Page({
     });
     this.setData({items: this.data.items});
     // 饼图测试代码 结束
+      */
   },
 
   // 标签页切换
