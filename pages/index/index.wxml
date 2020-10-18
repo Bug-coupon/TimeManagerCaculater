@@ -26,7 +26,6 @@
   </view>
 </scroll-view>
 
-<!--添加事项按钮 和 删除事项按钮-->
 <view class='inrow-buttons'>
   <view style="flex:1" ><center><van-button round class='add-button' icon='plus' type="primary" size='normal' 
     bindclick="showPopup" color="yellowgreen"/></center></view>
@@ -36,6 +35,7 @@
 
 <!-- 功能按键区域 -->
 <view class="button-wrapper">
+  <!--添加事项按钮 和 删除事项按钮-->
   <view class="line">
     <van-divider textColor="orange" font-size='12' contentPosition="center">排序</van-divider>
   </view>
