@@ -1,0 +1,28 @@
+.inbox{
+  display: flex;
+  border: aqua;
+  border-radius: 1rpx;
+}
+.title{
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  border: thin;
+  border-color: rgb(247, 138, 14);
+  border-style: solid;
+}
+.input{
+  border: thin;
+  border-color: rgb(247, 138, 14);
+  border-style: solid;
+}
+.setdays{
+  border: thin;
+  border-color: rgb(247, 138, 14);
+  border-style: solid;
+
+}
+.circletag{
+  margin-left: 20rpx;
+ 
+}

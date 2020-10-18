@@ -1,0 +1,66 @@
+.time{
+  margin-left: 50rpx;
+  margin-right: 62rpx;
+}
+.note{
+  width: 150vw;
+  height: 15vw;
+}
+.blackborad{
+  width: 25vw;
+  height: 25vw;
+}
+.custom-button{
+  background-color: rgb(238, 64, 11);
+  border: 3rpx solid #faca82;
+  border-radius: 10rpx;
+  padding: 10rpx;
+}
+.item {
+  display: inline-block;
+  width: 32px;
+  margin-right: 5px;
+  color: #fff;
+  font-size: 12px;
+  text-align: center;
+  background-color: #f76d2e;
+  border-radius: 2px;
+}
+
+.time-start{
+  height: 500rpx;
+}
+.start{
+  margin-left: 200rpx;
+}
+.end{
+  margin-left:440rpx ;
+  margin-bottom: 200rpx;
+}
+.button{
+  height:20.8rpx;
+}
+
+.content{
+  display: flex;
+  flex-direction: row;
+  margin-top: 190rpx;
+}
+
+center{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.empty{
+  height: 120rpx;
+}
+.add{
+  margin-left: 500rpx;
+}
+.btn1{
+  margin-top: 200rpx;
+}
+.but2{
+  margin: 50rpx;
+}

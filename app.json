@@ -2,6 +2,7 @@
   "pages": [
     "pages/index/index",
     "pages/todo/todo",
+    "pages/countDown/countDown",
     "pages/logs/logs",
     "pages/calculator/calculator",
     "pages/index/chart2/chart2"
@@ -35,6 +36,12 @@
         "text": "记录",
         "iconPath": "icons/notepad.png",
         "selectedIconPath": "icons/notepad.png"
+      },
+      {
+        "pagePath": "pages/countDown/countDown",
+        "text": "倒计时",
+        "iconPath": "icons/countDown.png",
+        "selectedIconPath": "icons/countDown.png"
       },
       {
         "pagePath": "pages/todo/todo",

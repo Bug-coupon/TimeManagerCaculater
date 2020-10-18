@@ -1,0 +1,64 @@
+<view class="time">
+  <view class="blackborad">    
+   <view class="note">
+    <van-circle value="{{value}}" text="{{value}}%" layer-color="rgb(175,174, 174)" size="150" /> 
+    
+  </view>
+  </view>
+  <view class="empty">
+    <van-button bind:click="useradd" type="warning" class="add">增加</van-button>
+    
+  </view>
+  <view class="but1">
+    <van-button  bind:click="showstep" type="warning" >设置步长</van-button>     <van-stepper class="but2" value="{{1}}" bind:change="onChangestep" />    
+  </view>
+  <view class="note">
+    <text> </text> 
+    <view class='countDown'>倒计时： 
+      <text class="item">{{ hours }}时</text>
+      <text class="item">{{ minutes }}分</text>
+      <text class="item">{{ seconds }}秒</text>
+     
+    </view>
+  </view>
+<van-slider disabled="true" value="{{ currentValue }}" step="1" use-button-slot bind:drag="nonDrag" bind:change="onDrag" bar-height="4px" active-color="#ee0a24"> 
+  <view class="custom-button" slot="button">
+    {{ currentValue }}%
+  </view>
+</van-slider>
+</view>
+<van-popup 
+show="{{ show }}" 
+bind:close="onClose"
+position="bottom"
+custom-style="height: 60%;">
+  <van-datetime-picker
+  type="time"
+  title="小时-- 设置倒计时-- 分钟"
+  value="{{ currentDate }}"
+  min-hour="{{ minHour }}"
+  max-hour="{{ maxHour }}"
+  bind:input="onInput"
+  bind:confirm="onConfirm"
+  bind:change="onChange"
+  />
+</van-popup>
+<view class="empty"></view>
+<van-button class="set-time" plain round bind:click="showPopup" type="warning" size="large">设置时间</van-button>
+
+<view class="time-start">
+  <view class="content">
+  <view style="flex:1;">
+    <center>
+      <view><van-button  bind:click="startbut" round type="warning">开始</van-button></view>
+    </center>
+  </view>
+  <view style="flex:1;">
+    <center>
+      <view><van-button bind:click="endbut" round type="warning">结束</van-button></view>
+    </center>
+    
+  </view>
+</view>
+</view>
+

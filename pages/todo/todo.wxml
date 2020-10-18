@@ -1,9 +1,57 @@
-<!--index.wxml-->
-<van-tabs active="{{ active }}" bind:change="onChange">
-  <van-tab title="标签 1">内容 1
-  
-  </van-tab>
-  <van-tab title="标签 2">
-  内容 2
-  </van-tab>
-</van-tabs>
+<view class="title"> 
+  <view style="flex:1">项目名称</view>
+  <view style="flex:1">乐观时间(天数)</view>
+  <view style="flex:1">保守时间(天数)</view>
+</view>
+<view wx:for="{{array}}" >
+  <van-cell-group custom-class="inbox">
+    <van-field class="input"
+      value="{{ time }}"
+      placeholder="项目名称"
+      required
+      
+    />
+    <van-field class="input"
+      value="{{time }}"
+      type="number"
+      placeholder="请输入数字"
+      required
+      bind:blur="onBlur1"
+      id="{{item}}"
+    />
+    <van-field class="input"
+      value="{{ time }}"
+      type="number"
+      placeholder="请输入数字"
+      required
+      border="{{true}}"
+      bind:blur="onBlur2"
+      id="{{item}}"
+    />
+    
+  </van-cell-group>
+</view>
+<button bindtap="add">+</button>
+<view class="inbox">
+  <van-field class="setdays"
+      value="{{ days }}"
+      placeholder="默认100"
+      label="设置总天数"
+      required
+      bind:blur="onBlur3"
+      
+    />
+    <button bindtap="cal">确定</button>
+</view>
+<van-circle 
+  value="{{ persentage }}" 
+  text="{{persentage}}%" 
+  layer-color="#eeeeee"
+  size="120"
+  />
+<view class="circletag">预估的完成度</view>
+<van-collapse value="{{ activeNames }}" bind:change="onChange" custom-class="input">
+  <van-collapse-item title="注意" name="1">
+    乐观时间要小于等于保守时间;不能输入负数
+  </van-collapse-item>
+</van-collapse>

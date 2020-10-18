@@ -58,8 +58,8 @@ background-color:rgb(240, 243, 243);
   width: 25vw;
   height: 25vw;
   line-height: 25vw;
-  border-top: 1px solid rgb(39, 42, 241);
-  border-right: 1px solid rgb(39, 42, 241);
+  border-top: 1px solid rgb(243, 141, 7);
+  border-right: 1px solid rgb(243, 141, 7);
   text-align: center;
   box-sizing: border-box;
 }
