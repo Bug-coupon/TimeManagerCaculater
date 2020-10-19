@@ -99,6 +99,13 @@ Page({
     this.setData({items: this.data.items});
     // 饼图测试代码 结束
       */
+     let memo = wx.getStorageSync('keyItems');
+     if (typeof(memo) != "string") {
+       console.log("get storage success");
+      this.data.items = memo;
+      this.setData({items: this.data.items});
+     }
+     console.log(this.data.items);
   },
 
   // 标签页切换
@@ -130,6 +137,7 @@ Page({
     var toDel = this.data.activeName;
     this.data.items.splice(toDel, 1);
     this.setData({items: this.data.items});
+    wx.setStorageSync('keyItems', this.data.items);
   },
 
   // 新增事项按钮, 打开底部弹出层
@@ -186,12 +194,20 @@ Page({
       wx.showToast({title:'时间输入有误', icon:'none'});
       return false;
     }
+    if (this.data.item.startTime.getDate() != this.data.item.endTime.getDate()) {
+      wx.showToast({title: '不支持跨日事项', icon:'none'});
+      return false;
+    }
     this.setData({item: this.data.item});
     var startTimeString = this.data.item.startTime.toTimeString();
     var endTimeString = this.data.item.endTime.toTimeString();
+    var startTimeDate = this.data.item.startTime.toDateString();
+    var endTimeDate = this.data.item.endTime.toDateString();
     var pos1 = startTimeString.search("GMT");
     var pos2 = endTimeString.search("GMT");
-    startTimeString = startTimeString.substring(0,pos1-4);
+    // console.log(startTimeDate);
+    // console.log(endTimeDate);
+    startTimeString = startTimeDate.substring(4, 11) + startTimeString.substring(0,pos1-4);
     endTimeString = endTimeString.substring(0,pos2-4);
     this.data.items.push({
       type: this.data.item.type,
@@ -202,6 +218,7 @@ Page({
       text: this.data.item.text
     });
     this.setData({items: this.data.items});
+    wx.setStorageSync('keyItems', this.data.items);
     console.log(this.data.items);
     this.onClose();
   },
